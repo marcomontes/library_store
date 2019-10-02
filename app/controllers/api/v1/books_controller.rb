@@ -32,7 +32,7 @@ class Api::V1::BooksController < ApplicationController
   def search_by_isbn; search end
 
   def search
-    @books = Book.search search_params[:term]
+    @books = Book.search book_params[:term]
     if @books.any?
       render json: @books, status: :ok
     else
@@ -48,10 +48,8 @@ class Api::V1::BooksController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def book_params
-      params.permit(:title, :author_id, :isbn, :price, :short_description)
+      puts "====== #{params}"
+      params.require(:book).permit(:title, :author_id, :isbn, :price, :short_description, :term)
     end
 
-    def search_params
-      params.permit(:term)
-    end
 end

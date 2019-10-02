@@ -54,10 +54,10 @@ RSpec.describe 'Books API' do
 
   # Test suite for POST /api/v1/books
   describe 'POST /api/v1/books' do
-    let(:valid_attributes) { { title: 'The Road Ahead', isbn: '100200', price: 35, author_id: author_id } }
+    let(:valid_attributes) { { book: { title: 'The Road Ahead', isbn: '100200', price: 35, author_id: author_id } } }
 
     context 'when request attributes are valid' do
-      before { post "/api/v1/books", params: valid_attributes }
+      before { post "/api/v1/books", params: valid_attributes, as: :json }
 
       it 'returns status code 201' do
         expect(response).to have_http_status(201)
@@ -65,7 +65,7 @@ RSpec.describe 'Books API' do
     end
 
     context 'when an invalid request' do
-      before { post "/api/v1/books", params: { author_id: author_id, isbn: '100201', price: 35 } }
+      before { post "/api/v1/books", params: { book: { author_id: author_id, isbn: '100201', price: 35 } }, as: :json }
 
       it 'returns status code 422' do
         expect(response).to have_http_status(422)
@@ -88,7 +88,7 @@ RSpec.describe 'Books API' do
   
   # Test suite for SEARCH by TITLE /api/v1/books/search_by_title
   describe 'GET /api/v1/books/search_by_title' do
-    before { get "/api/v1/books?term=#{title_search_term}" }
+    before { get search_by_title_api_v1_books_url( book: { term: title_search_term }), as: :json}
 
     context 'when found books' do
       it 'returns status code 200' do
