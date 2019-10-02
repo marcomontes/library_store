@@ -9,4 +9,7 @@ class Book < ApplicationRecord
   validates :price,  numericality: { only_integer: true }
 
   delegate :full_name, to: :author, prefix: true
+
+  scope :search, -> (term) { where("title || ' ' || isbn LIKE ?", "%#{term}%") }
+
 end
