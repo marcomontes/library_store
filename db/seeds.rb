@@ -25,7 +25,7 @@ neal_stephenson = Author.create(name: 'Neal', lastname: 'Stephenson')
 
 Book.create(
   title: 'Seveneves',
-  author: isaac_newton,
+  author: neal_stephenson,
   isbn:   '0062334514',
   price:  45,
   short_description: "No slim fables or nerdy novellas for Stephenson: his visions are epic, and he requires whole worlds-and, in this case, solar systems-to accommodate them....Wise, witty, utterly well-crafted science fiction"

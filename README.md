@@ -35,7 +35,7 @@ GET http://localhost:3000/api/v1/books/
     {
         "id": 1,
         "title": "The Call of Cthulhu",
-        "author_id": 1,
+        "author": "Howard Phillips Lovecraft"
         "isbn": "0-87054-037-8",
         "price": 40,
         "short_description": "One of the feature stories of the Cthulhu Mythos, H.P. Lovecraft's 'the Call of Cthulhu' is a harrowing tale of the weakness of the human mind when confronted by powers and intelligences from beyond our world."
@@ -43,7 +43,7 @@ GET http://localhost:3000/api/v1/books/
     {
         "id": 2,
         "title": "A Treatise of the System of the World",
-        "author_id": 2,
+         "author": "Isaac Newton"
         "isbn": "9781511496421",
         "price": 30,
         "short_description": "Let us then assume the mean distance of the Moon, 60 semi-diameters of the Earth, and its periodic time in respect of the fixed Stars, d. 7h. 43', as Astronomers have determined it. And a body revolved in our air, near the surface of the Earth supposed at rest, by means of a centripetal force, which should be, to the lame force at the distance of the..."
@@ -51,7 +51,7 @@ GET http://localhost:3000/api/v1/books/
     {
         "id": 3,
         "title": "Seveneves",
-        "author_id": 2,
+        "author": "Neal Stephenson"
         "isbn": "0062334514",
         "price": 45,
         "short_description": "No slim fables or nerdy novellas for Stephenson: his visions are epic, and he requires whole worlds-and, in this case, solar systems-to accommodate them....Wise, witty, utterly well-crafted science fiction"
@@ -69,7 +69,7 @@ GET http://localhost:3000/api/v1/books/2
 {
     "id": 2,
     "title": "A Treatise of the System of the World",
-    "author_id": 2,
+    "author": "Isaac Newton",
     "isbn": "9781511496421",
     "price": 30,
     "short_description": "Let us then assume the mean distance of the Moon, 60 semi-diameters of the Earth, and its periodic time in respect of the fixed Stars, d. 7h. 43', as Astronomers have determined it. And a body revolved in our air, near the surface of the Earth supposed at rest, by means of a centripetal force, which should be, to the lame force at the distance of the..."
@@ -133,12 +133,10 @@ GET http://localhost:3000/api/v1/books/search_by_title
     {
         "id": 1,
         "title": "The Call of Cthulhu",
-        "author_id": 1,
+        "author": "Howard Phillips Lovecraft",
         "isbn": "0-87054-037-8",
         "price": 40,
-        "short_description": "One of the feature stories of the Cthulhu Mythos, H.P. Lovecraft's 'the Call of Cthulhu' is a harrowing tale of the weakness of the human mind when confronted by powers and intelligences from beyond our world.",
-        "created_at": "2019-10-01T01:50:20.619Z",
-        "updated_at": "2019-10-01T01:50:20.619Z"
+        "short_description": "One of the feature stories of the Cthulhu Mythos, H.P. Lovecraft's 'the Call of Cthulhu' is a harrowing tale of the weakness of the human mind when confronted by powers and intelligences from beyond our world."
     }
 ]
 ```
@@ -170,22 +168,18 @@ GET http://localhost:3000/api/v1/books/search_by_title
     {
         "id": 2,
         "title": "A Treatise of the System of the World",
-        "author_id": 2,
+        "author": "Isaac Newton",
         "isbn": "9781511496421",
         "price": 30,
-        "short_description": "Let us then assume the mean distance of the Moon, 60 semi-diameters of the Earth, and its periodic time in respect of the fixed Stars, d. 7h. 43', as Astronomers have determined it. And a body revolved in our air, near the surface of the Earth supposed at rest, by means of a centripetal force, which should be, to the lame force at the distance of the...",
-        "created_at": "2019-10-01T01:50:20.628Z",
-        "updated_at": "2019-10-01T01:50:20.628Z"
+        "short_description": "Let us then assume the mean distance of the Moon, 60 semi-diameters of the Earth, and its periodic time in respect of the fixed Stars, d. 7h. 43', as Astronomers have determined it. And a body revolved in our air, near the surface of the Earth supposed at rest, by means of a centripetal force, which should be, to the lame force at the distance of the..."
     },
     {
         "id": 3,
         "title": "Seveneves",
-        "author_id": 2,
+        "author": "Neal Stephenson"
         "isbn": "0062334514",
         "price": 45,
-        "short_description": "No slim fables or nerdy novellas for Stephenson: his visions are epic, and he requires whole worlds-and, in this case, solar systems-to accommodate them....Wise, witty, utterly well-crafted science fiction",
-        "created_at": "2019-10-01T01:50:20.636Z",
-        "updated_at": "2019-10-01T01:50:20.636Z"
+        "short_description": "No slim fables or nerdy novellas for Stephenson: his visions are epic, and he requires whole worlds-and, in this case, solar systems-to accommodate them....Wise, witty, utterly well-crafted science fiction"
     }
 ]
 ```
