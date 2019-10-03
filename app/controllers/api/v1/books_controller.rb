@@ -26,6 +26,7 @@ class Api::V1::BooksController < ApplicationController
   # DELETE /books/1
   def destroy
     @book.destroy
+    render json: { message: 'Book deleted' }
   end
 
   def search_by_title; search end
@@ -36,7 +37,7 @@ class Api::V1::BooksController < ApplicationController
     if @books.any?
       render json: @books, status: :ok
     else
-      render json: { msg: "We didn't find any books" }, status: :unprocessable_entity
+      render json: { message: "We didn't find any books" }, status: :unprocessable_entity
     end
   end
 
@@ -48,7 +49,6 @@ class Api::V1::BooksController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def book_params
-      puts "====== #{params}"
       params.require(:book).permit(:title, :author_id, :isbn, :price, :short_description, :term)
     end
 
