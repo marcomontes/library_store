@@ -81,8 +81,8 @@ RSpec.describe 'Books API' do
   describe 'DELETE /api/v1/books/:id' do
     before { delete "/api/v1/books/#{id}" }
 
-    it 'returns status code 204' do
-      expect(response).to have_http_status(204)
+    it 'returns status code 202' do
+      expect(response).to have_http_status(202)
     end
   end
   

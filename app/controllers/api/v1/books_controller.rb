@@ -26,7 +26,7 @@ class Api::V1::BooksController < ApplicationController
   # DELETE /books/1
   def destroy
     @book.destroy
-    render json: { message: 'Book deleted' }
+    render json: { message: 'Book deleted' }, status: :accepted
   end
 
   def search_by_title; search end
